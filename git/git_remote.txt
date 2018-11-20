@@ -1,0 +1,51 @@
+远程连接：
+创建ssh key:
+$ ssh-keygen -t rsa -C "youremail@example.com"
+一路回车，使用默认值即可
+
+用户主目录下
+id_rsa和id_rsa.pub
+
+先有本地库，再有远端库：
+本地仓库关联远端仓库：
+$ git remote add origin git@github.com:michaelliao/learngit.git
+
+本地推送远端：
+用git push命令，实际上是把当前分支master推送到远程：
+首次
+$ git push -u origin master
+以后推送：
+$ git push origin master
+
+克隆：
+$ git clone git@github.com:michaelliao/gitskills.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

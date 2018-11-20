@@ -1,0 +1,16 @@
+权限问题（403）
+web:
+You don't have permission to access / on this server. 
+Server unable to read htaccess file, denying access to be safe
+
+log:
+tail -f error.log
+
+[core:crit] [pid 8688:tid 140271866074880] (13)Permission denied: [client 121.35.186.70:42609] AH00529: /root/.htaccess pcfg_openfile: unable to check htaccess file, ensure it is readable and that '/root/' is executable, referer: http://120.78.180.118:8080/
+
+.htaccess
+/root/
+
+
+
+

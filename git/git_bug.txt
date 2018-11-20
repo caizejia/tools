@@ -1,0 +1,64 @@
+当前工作现场“储藏”起来，等以后恢复现场后继续工作：
+$ git stash
+Saved working directory and index state WIP on dev: f52c633 add merge
+
+确定bug分支(master):
+git checkout master
+gti checkout -b issue-001
+
+修复bug并提交
+vim readme.txt
+fixed
+:qa
+git add readme.txt
+git commit -m'fixed bug'
+
+切换master分支并合并
+git checkout master
+git merge issue-001
+
+切换回原来工作：
+git checkout dev
+
+查看状态：
+git status
+
+恢复现场并删除其存储：
+git stash pop
+
+查看工作现场（多个list）：
+$ git stash list
+stash@{0}: WIP on dev: f52c633 add merge
+
+恢复指定list:
+$ git stash apply stash@{0}
+git stash drop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

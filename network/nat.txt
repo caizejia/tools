@@ -1,0 +1,3 @@
+http://www.hc.com:8080
+
+广域网-->ips-->router-->外部端口-->私有ip:80

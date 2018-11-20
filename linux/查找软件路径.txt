@@ -1,0 +1,50 @@
+①列出所有安装的Jenkins
+rpm -qa | grep jenkins
+
+②软件是否安装；例如：jenkins是否安装
+rpm -q | grep jenkins
+
+③rpm -ql 列出软件包安装的文件
+rpm -ql jenkins
+
+④可以直接使用 rpm -qal |grep mysql 查看mysql所有安装包的文件存储位置
+rpm -qal |grep jenkins #查看jenkins所有安装包的文件存储位置
+
+yum search mysql
+
+find / -name mysql
+
+which mysql 
+Which命令是通过 PATH环境变量查找可执行文件路径，用于查找指向这个命令所在的文件夹
+[root@iZvb1bm11208yqZ bin]# which mysql
+/usr/bin/mysql
+
+whereis mysql
+[root@iZvb1bm11208yqZ bin]# whereis mysql
+mysql: /usr/bin/mysql /usr/lib/mysql /usr/include/mysql /usr/local/mysql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

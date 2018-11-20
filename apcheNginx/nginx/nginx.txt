@@ -1,0 +1,6 @@
+
+nginx以哪个配置文件运行的？
+[root@iZvb1bm11208yqZ bin]# ps -ef |grep nginx
+root      8587     1  0 Nov14 ?        00:00:00 nginx: master process /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf
+www       8589  8587  0 Nov14 ?        00:00:00 nginx: worker process                                          
+root     13792 13666  0 09:26 pts/0    00:00:00 grep nginx

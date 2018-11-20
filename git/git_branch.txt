@@ -1,0 +1,58 @@
+主分区：
+在Git里，这个分支叫主分支，即master分支。HEAD指向master
+master指向最新的提交，再用HEAD指向master，
+就能确定当前分支，以及当前分支的提交点：
+Git创建一个分支很快，因为除了增加一个dev指针，改改HEAD的指向，
+工作区的文件都没有任何变化！
+
+创建dev分支，然后切换到dev分支：
+$ git checkout -b dev
+
+命令查看当前分支：
+$ git branch
+* dev
+  master
+
+切换回master分支：
+$ git checkout master
+
+把dev分支的工作成果合并到master分支上：
+$ git merge dev
+
+删除dev分支：
+$ git branch -d dev
+Deleted branch dev (was b17d20e).
+
+解决冲突：
+<<<<<<< HEAD
+Creating a new branch is quick & simple.(master)
+=======
+Creating a new branch is quick AND simple.(dev)
+>>>>>>> dev
+
+再提交：(commit一次多一个版本)
+$ git add readme.txt 
+$ git commit -m "conflict fixed"
+[master cf810e4] conflict fixed
+
+删除dev分支：
+$ git branch -d dev
+
+master主分支不干活，只用来合并，发布版本
+dev分支用来合并每一个程序员的提交，起到测试作用
+per_dev 每个程序员的分支，从dev拉取，功能完成合并到dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

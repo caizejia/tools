@@ -1,0 +1,36 @@
+Nginx+php-fpm的进程间通信有两种方式
+一个是TCP，另一个是Unix Domain Socket。
+
+TCP： 格式为IP：端口, 可以跨服务器。
+Unix Domain Socket不经过网络，只能用于Nginx跟PHP-FPM都在同一个服务器上的场景。
+
+方式一：
+php-fpm.conf: listen = 127.0.0.1:9000
+nginx.conf:fastcgi_pass 127.0.0.1:9000
+
+方式二：
+php-fpm.conf: listen = /tmp/php-fpm.sock
+nginx.conf: fastcgi_pass unix:/tmp/php-fpm.sock
+
+UNIX Domain Socket可用于两个没有亲缘关系的进程,是目前广泛使用的IPC机制,比如X Window服务器和GUI程序之间就是通过UNIX Domain Socket通讯的.这种通信方式是发生在系统内核里而不会在网络里传播.
+UNIX Domain Socket和长连接都能避免频繁创建TCP短连接而导致TIME_WAIT连接过多的问题.
+对于进程间通讯的两个程序,UNIX Domain Socket的流程不会走到TCP那层,直接以文件形式,以stream socket通讯.
+如果是TCP Socket,则需要走到IP层,对于非同一台服务器上,TCP Socket走的就更多了
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

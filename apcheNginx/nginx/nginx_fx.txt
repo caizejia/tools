@@ -1,0 +1,83 @@
+我们来看一个示例配置：
+
+user  nobody;
+worker_processes  1;
+error_log  logs/error.log  info;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    server {
+        listen          80;
+        server_name     www.linuxidc.com;
+        access_log      logs/linuxidc.access.log main;
+        location / {
+            index index.html;
+            root  /var/www/linuxidc.com/htdocs;
+        }
+    }
+
+    server {
+        listen          80;
+        server_name     www.Androidj.com;
+        access_log      logs/androidj.access.log main;
+        location / {
+            index index.html;
+            root  /var/www/androidj.com/htdocs;
+        }
+    }
+}
+
+mail {
+    auth_http  127.0.0.1:80/auth.php;
+    pop3_capabilities  "TOP"  "USER";
+    imap_capabilities  "IMAP4rev1"  "UIDPLUS";
+
+    server {
+        listen     110;
+        protocol   pop3;
+        proxy      on;
+    }
+    server {
+        listen      25;
+        protocol    smtp;
+        proxy       on;
+        smtp_auth   login plain;
+        xclient     off;
+    }
+}
+在这个配置中，上面提到个五种配置指令上下文都存在。
+
+存在于main上下文中的配置指令如下:
+
+user
+worker_processes
+error_log
+events
+http
+mail
+存在于http上下文中的指令如下:
+
+server
+存在于mail上下文中的指令如下：
+
+server
+auth_http
+imap_capabilities
+存在于server上下文中的配置指令如下：
+
+listen
+server_name
+access_log
+location
+protocol
+proxy
+smtp_auth
+xclient
+存在于location上下文中的指令如下：
+
+index
+root
+当然，这里只是一些示例。具体有哪些配置指令，以及这些配置指令可以出现在什么样的上下文中，需要参考nginx的使用文档。

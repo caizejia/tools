@@ -1,0 +1,23 @@
+gitlab搭建提示
+[root@iZvb1bm11208yqZ ~]# systemctl start postfix
+Job for postfix.service failed because the control process exited with error code. See "systemctl status postfix.service" and "journalctl -xe" for details.
+
+解决办法：
+
+修改 /etc/postfix/main.cf的设置  
+  
+inet_protocols = ipv4  
+inet_interfaces = all  
+
+
+
+
+
+
+
+
+
+
+
+
+

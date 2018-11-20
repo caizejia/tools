@@ -1,0 +1,108 @@
+
+安装：
+linux:
+Debian或Ubuntu Linux，通过一条sudo apt-get install git就可以直接完成Git的安装
+其他Linux版本，可以直接通过源码安装。先从Git官网下载源码，然后解压，依次输入：./config，make，sudo make install
+window:
+exe安装
+
+配置：
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+
+创建库：
+创建一个空目录
+$ mkdir learngit
+$ cd learngit
+$ pwd
+/Users/michael/learngit
+
+$ git init
+Initialized empty Git repository in /Users/michael/learngit/.git/
+
+工作区
+vim readme.txt
+添加至暂存区
+$ git add readme.txt
+提交至版本库
+$ git commit -m "wrote a readme file"
+[master (root-commit) eaadf4e] wrote a readme file
+ 1 file changed, 2 insertions(+)
+ create mode 100644 readme.txt
+
+查看状态：
+git status
+
+查看修改，OK的话再git add：
+$ git diff readme.txt
+
+查看版本：
+git log
+git log --pretty=oneline
+
+版本回退：
+$ git reset --hard 1094a
+
+查看记录的命令：
+$ git reflog
+
+放弃工作区的修改（同步版本库）：
+$ git checkout -- readme.txt
+
+放弃暂存区的修改：
+$ git reset HEAD readme.txt
+
+
+删除工作区文件：
+$ rm test.txt
+
+误删除，放弃工作区的修改（同步版本库）：
+$ git checkout -- readme.txt
+
+提交删除文件到暂存区：
+$ git rm test.txt
+
+提交删除文件到版本库
+$ git commit -m "remove test.txt"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

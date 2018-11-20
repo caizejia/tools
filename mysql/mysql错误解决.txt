@@ -1,0 +1,15 @@
+CREATE TABLE `sys_expense` (
+  
+`id` int(11) NOT NULL AUTO_INCREMENT,
+  
+`createtime` datetime DEFAULT CURRENT_TIMESTAMP,
+
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='报销表';
+1067 - Invalid default value for 'createtime'
+
+错误原因
+datetime类型只支持mysql 5.6.5+.
+
+解决方法：
+将datetime 改为 timestamp
+

@@ -1,0 +1,17 @@
+一：域名方式
+    共用80端口
+    hosts文件添加
+    127.0.0.1 www.domain.com
+    httpd-vhosts.conf
+    修改域名
+    修改域名所对应文件夹路径
+    访问方式
+    直接域名访问
+
+二：ip+端口方式
+    httpd.conf添加监听的端口
+    httpd-vhosts.conf
+    端口修改为对应监听的端口
+    修改源码文件夹的路径
+    访问方式：
+    ip+port

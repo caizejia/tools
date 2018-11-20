@@ -1,0 +1,66 @@
+查看远程库的信息：
+$ git remote
+origin
+
+$ git remote -v
+origin  git@github.com:michaelliao/learngit.git (fetch)
+origin  git@github.com:michaelliao/learngit.git (push)
+
+推送远端：
+$ git push origin master
+$ git push origin dev
+
+team_b clone后，本地只有master分支：
+git branch
+* master
+
+创建远端分支:
+git checkout -b dev origin/dev
+
+提交远端：
+vim readme.txt
+B
+:qw
+git add readme.txt
+git commit -m"i am b"
+git push origin dev
+
+vim readme.txt
+A
+:qw
+git add readme.txt
+git commit -m"i am A"
+git push origin dev(冲突)
+
+指定本地dev分支与远程origin/dev分支的链接
+git branch --set-upstream branch-name origin/branch-name；
+$ git pull(合并失败，冲突)
+解决冲突：
+vim readme.txt
+:qw
+再次提交：
+$ git add readme.txt
+$ git commit -m"fix env conflict"
+git push origin dev
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
